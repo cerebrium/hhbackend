@@ -257,6 +257,7 @@ func main() {
 
 	if port == "" {
 		log.Fatal("$PORT must be set")
+		port = "8080"
 	}
-	app.Listen(":" + port)
+	app.Listen(port)
 }

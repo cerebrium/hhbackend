@@ -113,7 +113,7 @@ func main() {
 		var results []bson.M
 
 		// actually make the request using the cursor
-		cur, err := collection.Find(context.Background(), filter)
+		cur, err := collection.Find(context.Background(), filter, options.Find())
 		defer cur.Close(context.Background())
 
 		// handle errors
@@ -251,9 +251,12 @@ func main() {
 			}
 		}
 	})
+	log.Fatal(app.Listen(":8080"))
+
 	port := os.Getenv("PORT")
 
 	if port == "" {
 		log.Fatal("$PORT must be set")
 	}
+	app.Listen(":" + port)
 }

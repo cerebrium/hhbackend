@@ -252,7 +252,7 @@ func main() {
 		}
 	})
 
-	port := os.Getenv("PORT")
+	port := ":" + os.Getenv("PORT")
 
 	if port == "" {
 		port = "5000"

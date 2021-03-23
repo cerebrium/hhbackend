@@ -251,7 +251,6 @@ func main() {
 			}
 		}
 	})
-	log.Fatal(app.Listen(":8080"))
 
 	port := os.Getenv("PORT")
 

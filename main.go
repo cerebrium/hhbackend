@@ -252,6 +252,7 @@ func main() {
 		}
 	})
 
+	// allow for heroku to set port
 	port := ":" + os.Getenv("PORT")
 
 	if port == "" {
